@@ -2,19 +2,17 @@ var directory = {
 		views: {},
 		models: {},
 		
-		loadTemplate: function(views, callback) {
-			
+		loadTemplates: function(view, callback) {
 			var deferreds = [];
 			$.each(view, function(index, view) {
 				if (directory[view]) {
-					deferreds.push($.get('tpl' + view + '.html', function(data) {
+					deferreds.push($.get('tpl/' + view + '.html', function(data) {
 						directory[view].prototype.template = _.template(data);
 					}, 'html'));
 				} else {
 					alert(view + " not found");
 				}
 			});
-			
 			$.when.apply(null, deferreds).done(callback);
 		}
 };
@@ -31,18 +29,18 @@ directory.Router = Backbone.Router.extend({
 	login: function() {
 		if (!directory.loginView) {
 			directory.loginView = new directory.LoginView();
-			directory.loginViwe.render();
+			directory.loginView.render();
 		} else {
 			directory.loginView.delegateEvents();
 		}
-		this.$content.html(directory.loginView.el);
+		$('#app').html(directory.loginView.el);
 	}
 });
 
 $(document).on("ready", function() {
 	directory.loadTemplates(['LoginView'],
 		function() {
-			directory.Router = new directory.Router();
+			directory.router = new directory.Router();
 			Backbone.history.start();
 		});
 });
