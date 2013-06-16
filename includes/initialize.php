@@ -1,0 +1,30 @@
+<?php
+defined('DS') 			? null : define('DS', DIRECTORY_SEPARATOR);
+defined('SITE_ROOT') 	? null : define('SITE_ROOT', 'C:'.DS.'wamp'.DS.'www'.DS.'apps2');
+defined('LOG')			? null : define('LOG', SITE_ROOT.DS.'log.txt');
+defined('LIB_PATH') 	? null : define('LIB_PATH', SITE_ROOT.DS.'includes');
+require_once(LIB_PATH.DS.'config.php');
+require_once(LIB_PATH.DS.'functions.php');
+require_once(LIB_PATH.DS.'database.php');
+require_once(LIB_PATH.DS.'database_object.php');
+require_once(LIB_PATH.DS.'account.php');
+require_once(LIB_PATH.DS.'file_upload.php');
+require_once(LIB_PATH.DS.'session.php');
+require_once(LIB_PATH.DS.'account.php');
+require_once(LIB_PATH.DS.'adminlog.php');
+require_once(LIB_PATH.DS.'attendance.php');
+require_once(LIB_PATH.DS.'client.php');
+require_once(LIB_PATH.DS.'client_profile.php');
+require_once(LIB_PATH.DS.'extra.php');
+require_once(LIB_PATH.DS.'holidays.php');
+require_once(LIB_PATH.DS.'log.php');
+require_once(LIB_PATH.DS.'message.php');
+require_once(LIB_PATH.DS.'objectives.php');
+require_once(LIB_PATH.DS.'problems.php');
+require_once(LIB_PATH.DS.'screenshot.php');
+require_once(LIB_PATH.DS.'shift.php');
+require_once(LIB_PATH.DS.'superadmin.php');
+require_once(LIB_PATH.DS.'task.php');
+require_once(LIB_PATH.DS.'task2.php');
+require_once(LIB_PATH.DS.'timezone.php');
+?>
