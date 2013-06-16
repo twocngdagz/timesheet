@@ -42,30 +42,9 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div style="margin: 0 auto; max-width: 350px;">
-				<img src="img/logo.png" />
-			</div>
-
-			<form class="form-signin">
-				<div style="background: white;margin:15px 0px 0px 0px;padding:10px 20px 5px 20px;">
-					<input id="login_user" name="user" type="text"
-					class="input-block-level" placeholder="Username">
-					<input
-					type="password" class="input-block-level" placeholder="Password">
-					<label class="checkbox">
-						<input type="checkbox"
-						value="remember-me">
-						Remember me </label>
-					<button class="btn btn-large btn-primary" type="submit">
-						Sign
-						in
-					</button>
-				</div>
-			</form>
-
-		</div>
 		<!-- /container -->
+		<div id='app'>
+		</div>
 
 		<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -74,5 +53,11 @@
 		<script type="text/javascript"
 		src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
 		<script src="library/bootstrap.min.js"></script>
+		
+		
+		<script src="js/util.js"></script>
+		<script src="js/views/login.js"></script>
+		
+		<script src="js/main"></script>
 	</body>
 </html>
