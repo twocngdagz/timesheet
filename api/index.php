@@ -8,9 +8,15 @@ $app = new \Slim\Slim();
 $app->get('/accounts', 'getAccounts');
 $app->get('/accounts/:id', 'getAccount');
 $app->post('/accounts', 'addAcccount');
+$app->post('/login', 'login');
 $app->get('/attendances', 'getAttendances');
 $app->get('/attendance/:id', 'getAttendance');
 $app->run();
+
+function login() {
+	$user = array("email"=>"admin", "firstName"=>"Clint", "lastName"=>"Berry", "role"=>"user");
+	echo json_encode($user);
+}
 
 
 function getAttendances() {

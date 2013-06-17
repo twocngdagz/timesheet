@@ -19,7 +19,8 @@ var directory = {
 
 directory.Router = Backbone.Router.extend({
 	routes: {
-		"": 'login'
+		"": 'login',
+		"home": "home"
 	}, 
 	
 	initialize: function() {
@@ -34,6 +35,9 @@ directory.Router = Backbone.Router.extend({
 			directory.loginView.delegateEvents();
 		}
 		$('#app').html(directory.loginView.el);
+	},
+	home: function() {
+		console.log('This is home');
 	}
 });
 
