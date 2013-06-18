@@ -37,12 +37,30 @@ directory.Router = Backbone.Router.extend({
 		$('#app').html(directory.loginView.el);
 	},
 	home: function() {
-		console.log('This is home');
+		directory.headerView = new directory.HeaderView();
+		directory.navigationView = new directory.NavigationView();
+		directory.welcomeView = new directory.WelcomeView();
+		directory.homescreenshotView = new directory.HomeScreenshotView();
+		directory.calendarView = new directory.CalendarView();
+		directory.hometimesheetView = new directory.HomeTimesheetView();1
+		directory.headerView.render();
+		directory.navigationView.render();
+		directory.welcomeView.render();
+		directory.calendarView.render();
+		directory.homescreenshotView.render();
+		directory.hometimesheetView.render();
+		$('#app').html(directory.headerView.el);
+		$(directory.navigationView.el).appendTo('#app');
+		$(directory.welcomeView.el).appendTo('#first-row');
+		$(directory.homescreenshotView.el).appendTo('#first-row');
+		$(directory.calendarView.el).appendTo('#second-row');
+		$(directory.hometimesheetView.el).appendTo('#second-row');
 	}
 });
 
 $(document).on("ready", function() {
-	directory.loadTemplates(['LoginView'],
+	directory.loadTemplates(['LoginView', 'HeaderView', 'NavigationView','WelcomeView','HomeScreenshotView',
+	                         'CalendarView','HomeTimesheetView'],
 		function() {
 			directory.router = new directory.Router();
 			Backbone.history.start();
