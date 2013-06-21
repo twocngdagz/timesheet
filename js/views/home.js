@@ -55,10 +55,16 @@ directory.CalendarView = Backbone.View.extend({
 directory.HomeTimesheetView = Backbone.View.extend({
 	initialize: function() {
 		console.log('Initialize Home Timesheet View');
+	},
+	events: {
+		"click #save": "save"
 	}, 
 	render: function() {
 		$(this.el).html(this.template());
 		return this;
+	},
+	save: function() {
+		console.log('save event');
 	}
 });
 
